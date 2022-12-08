@@ -10,8 +10,8 @@ npm run dev
 yarn dev
 ```
 ## Preview
-![tictac](https://user-images.githubusercontent.com/60422984/206533914-6d40d3bc-5a63-47c9-868a-5a85bea4be79.jpg)
+![download](https://user-images.githubusercontent.com/60422984/206535383-fbcfedee-f16a-481d-8100-f4dd94de6101.png)
 
 ## Deployed on Vercel
 
-[Next.js deployment documentation](https://nextjs.org/docs/deployment)
+[TicTacToe](sm-tictactoe.vercel.app)
