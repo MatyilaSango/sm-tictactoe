@@ -9,6 +9,9 @@ npm run dev
 # or
 yarn dev
 ```
+
+`Note: Under construction.`
+
 ## Preview
 ![download](https://user-images.githubusercontent.com/60422984/206535383-fbcfedee-f16a-481d-8100-f4dd94de6101.png)
 
