@@ -14,4 +14,4 @@ yarn dev
 
 ## Deployed on Vercel
 
-[TicTacToe](sm-tictactoe.vercel.app)
+[TicTacToe](https://sm-tictactoe.vercel.app/)
