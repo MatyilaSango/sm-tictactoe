@@ -9,6 +9,8 @@ npm run dev
 # or
 yarn dev
 ```
+## Preview
+![tictac](https://user-images.githubusercontent.com/60422984/206533914-6d40d3bc-5a63-47c9-868a-5a85bea4be79.jpg)
 
 ## Deployed on Vercel
 

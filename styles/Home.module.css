@@ -1,0 +1,103 @@
+.container {
+  padding: 0 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.gameContainer{
+  height: 100vh;
+  width: 100%;
+}
+
+.headingContainer{
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: rgb(204, 26, 56);
+  font-size: 50px;
+  position: relative;
+}
+.mainGameContainer{
+  margin-top:5px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tttgameContainer{
+  min-width: 400px;
+  min-height: 400px;
+  width: 500px;
+  height: 500px;
+  border: 1px dotted white;
+  border-radius: 30px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: pink;
+}
+.gameBlock{
+  width: 30%;
+  height: 30%;
+  border-radius: 30px;
+  margin: 5px;
+  background-color: #1A1C4D;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(251, 23, 61);
+  font-size: 100px;
+  font-family: "elegent";
+}
+.gameBlock:hover{
+  cursor: pointer;
+}
+.winnerLabel{
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  font-size: 18px;
+  color: pink;
+  animation: animWinLabel 3s linear infinite;
+}
+
+@keyframes animWinLabel {
+  0%{
+    opacity: 0;
+    transform: translateX(-50%);
+  }
+  33%{
+    transform: translateX(-80%);
+  }
+  50%{
+    opacity: 1;
+  }
+  66%{
+    transform: translateX(-20%);
+  }
+  100%{
+    opacity: 0;
+    transform: translateX(-50%);
+  }
+}
+
+.playerTurnName{
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.playersCon{
+  min-width: 350px;
+  width: 450px;
+  display: flex;
+  justify-content: space-between;
+  color: pink;
+}
