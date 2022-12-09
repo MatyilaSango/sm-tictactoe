@@ -80,15 +80,6 @@ export default function Home() {
     "r1c3-r2c3-r3c3-",
     "r1c1-r2c2-r3c3-",
     "r1c3-r2c2-r3c1-",
-    "r1c3-r1c2-r1c1-",
-    "r2c3-r2c2-r2c1-",
-    "r3c3-r3c2-r3c1-",
-    "r3c1-r2c1-r1c1-",
-    "r3c2-r2c2-r1c2-",
-    "r3c3-r2c3-r1c3-",
-    "r3c3-r2c2-r1c1-",
-    "r3c1-r2c2-r1c3-",
-    
   ];
 
   const playBlock = (blockNum, block, location) => {
@@ -144,14 +135,47 @@ export default function Home() {
         block9.current = currentHand;
         break;
     }
+
+    let player1WinnigsList = player1Winnigs.split("-");
+    let player2WinnigsList = player2Winnigs.split("-");
+
     winnings.map((e) => {
-      if (player1Winnigs.includes(e)) {
-        setWinner("Player 1");
-        winnerLabel.current = "Player 1 won!!!";
+      let player1WinnigsRearrenged = "";
+      for (var try1 = 0; try1 < player1WinnigsList.length - 1; try1++) {
+        for (var try2 = 0; try2 < player1WinnigsList.length - 1; try2++) {
+          for (var try3 = 0; try3 < player1WinnigsList.length - 1; try3++) {
+            player1WinnigsRearrenged +=
+              player1WinnigsList[try1] +
+              "-" +
+              player1WinnigsList[try2] +
+              "-" +
+              player1WinnigsList[try3] +
+              "-";
+            if (player1WinnigsRearrenged.includes(e)) {
+              setWinner("Player 1");
+              winnerLabel.current = "Player 1 won!!!";
+            }
+          }
+        }
       }
-      if (player2Winnigs.includes(e)) {
-        setWinner("Player 2");
-        winnerLabel.current = "Player 2 won!!!";
+
+      let player2WinnigsRearrenged = "";
+      for (var try1 = 0; try1 < player2WinnigsList.length - 1; try1++) {
+        for (var try2 = 0; try2 < player2WinnigsList.length - 1; try2++) {
+          for (var try3 = 0; try3 < player2WinnigsList.length - 1; try3++) {
+            player2WinnigsRearrenged +=
+              player2WinnigsList[try1] +
+              "-" +
+              player2WinnigsList[try2] +
+              "-" +
+              player2WinnigsList[try3] +
+              "-";
+            if (player2WinnigsRearrenged.includes(e)) {
+              setWinner("Player 2");
+              winnerLabel.current = "Player 2 won!!!";
+            }
+          }
+        }
       }
     });
 
