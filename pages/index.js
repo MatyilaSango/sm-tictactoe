@@ -195,7 +195,7 @@ export default function Home() {
     <div className={styles.container}>
       <Head>
         <title>SM-TicTacToe</title>
-        <meta name="description" content="Global weather app" />
+        <meta name="description" content="Play TicTacToe" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
