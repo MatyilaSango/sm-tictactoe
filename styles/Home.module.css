@@ -88,16 +88,48 @@
   }
 }
 
-.playerTurnName{
+.playerTurnName,.winningsCountContainer{
   margin-top: 20px;
   width: 100%;
   display: flex;
   justify-content: center;
 }
-.playersCon{
+.playersCon,.winningsCountPlayers{
   min-width: 350px;
   width: 450px;
   display: flex;
   justify-content: space-between;
   color: pink;
 }
+.player1winningsCount,.player2winningsCount{
+  width: 50%;
+  color: #EF163A;
+  
+}
+.player2winningsCount{
+  color: white;
+}
+
+.Oshape{
+  color: white;
+}
+
+.rebootButton{
+  position: relative;
+  left: 50px;
+}
+.rebootButton:active{
+  animation: rotateImageButton 1s linear;
+  background-color: green;
+  border-radius: 30px;
+}
+
+@keyframes rotateImageButton {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+

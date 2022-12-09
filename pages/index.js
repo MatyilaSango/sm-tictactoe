@@ -1,10 +1,14 @@
 import Head from "next/head";
+import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import { useEffect, useRef, useState } from "react";
+import rebootPic from '../icons/reboot.png'
 
 export default function Home() {
   const [winner, setWinner] = useState("");
   const [player1Winnigs, setplayer1Winnings] = useState("");
+  const [player1wins, setPlayer1wins] = useState(0)
+  const [player2wins, setPlayer2wins] = useState(0)
   const [player2Winnigs, setplayer2Winnings] = useState("");
   const [currentPlayer, setCurrentPlayer] = useState(1);
   const [currentHand, setCurrentHand] = useState("");
@@ -85,7 +89,7 @@ export default function Home() {
   const playBlock = (blockNum, block, location) => {
     if (blockNum.current === "" && winner === "") {
       setCurrentBlock(block);
-      setCurrentHand(currentPlayer == 1 ? "X" : "O");
+      setCurrentHand(currentPlayer == 1 ? "X" : (<span className={styles.Oshape}>O</span>));
 
       if (currentPlayer == 1)
         setplayer1Winnings(
@@ -153,6 +157,7 @@ export default function Home() {
               "-";
             if (player1WinnigsRearrenged.includes(e)) {
               setWinner("Player 1");
+              setPlayer1wins(player1wins + 0.5)
               winnerLabel.current = "Player 1 won!!!";
             }
           }
@@ -172,6 +177,7 @@ export default function Home() {
               "-";
             if (player2WinnigsRearrenged.includes(e)) {
               setWinner("Player 2");
+              setPlayer2wins(player2wins + 0.5)
               winnerLabel.current = "Player 2 won!!!";
             }
           }
@@ -188,8 +194,36 @@ export default function Home() {
       player1turn.current = "";
     }
 
+    if(winner === "Player 1"){player2turn.current = "";}
+    else if(winner === "Player 2"){player1turn.current = "";}
+
     setIsPlayed(false);
   }, [isPlayed]);
+
+  const newGame = () => {
+    console.log("clicked")
+    setWinner("")
+    setplayer1Winnings("")
+    setplayer2Winnings("")
+    setCurrentBlock("")
+    setCurrentHand("")
+    setCurrentPlayer(1)
+    player1turn.current = "Player 1's turn"
+    player2turn.current = ""
+    block1.current = ""
+    block2.current = ""
+    block3.current = ""
+    block4.current = ""
+    block5.current = ""
+    block6.current = ""
+    block7.current = ""
+    block8.current = ""
+    block9.current = ""
+    winnerLabel.current = ""
+    setIsPlayed(true)
+  }
+
+
 
   return (
     <div className={styles.container}>
@@ -203,11 +237,12 @@ export default function Home() {
         <div className={styles.headingContainer}>
           <label>TicTacToe</label>
           <label className={styles.winnerLabel}>{winnerLabel.current}</label>
+          <Image className={styles.rebootButton} src={rebootPic} alt="pic" width={30} onClick={newGame}/>
         </div>
         <div className={styles.playerTurnName}>
           <div className={styles.playersCon}>
             <span>{player1turn.current}</span>
-            <span>{player2turn.current}</span>
+            <span className={styles.Oshape}>{player2turn.current}</span>
           </div>
         </div>
         <div className={styles.mainGameContainer}>
@@ -220,6 +255,18 @@ export default function Home() {
                 <span>{e.b.current}</span>
               </div>
             ))}
+          </div>
+        </div>
+        <div className={styles.winningsCountContainer}>
+          <div className={styles.winningsCountPlayers}>
+            <div className={styles.player1winningsCount}>
+              <span>Player 1 score:</span>
+              <p>{player1wins}</p>
+            </div>
+            <div className={styles.player2winningsCount}>
+              <span>Player 2 score:</span>
+              <p>{player2wins}</p>
+            </div>
           </div>
         </div>
       </div>
