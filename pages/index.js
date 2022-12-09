@@ -14,7 +14,7 @@ export default function Home() {
   const [currentHand, setCurrentHand] = useState("");
   const [currentBlock, setCurrentBlock] = useState("");
   const [isPlayed, setIsPlayed] = useState(true);
-  const [playedMoves, setPlayedMoves] = useState(0)
+  const [playedMoves, setPlayedMoves] = useState(0);
   let block1 = useRef("");
   let block2 = useRef("");
   let block3 = useRef("");
@@ -205,11 +205,12 @@ export default function Home() {
       player1turn.current = "";
     }
 
-    if(playedMoves === 9 && winner === ""){ //maximum number of moves
+    if (playedMoves === 9 && winner === "") {
+      //maximum number of moves
 
       player1turn.current = "Game over !!!";
       player2turn.current = "Game over !!!";
-    } 
+    }
 
     setIsPlayed(false);
   }, [isPlayed]);
@@ -233,7 +234,7 @@ export default function Home() {
     block8.current = "";
     block9.current = "";
     winnerLabel.current = "";
-    setPlayedMoves(0)
+    setPlayedMoves(0);
     setIsPlayed(true);
   };
 
@@ -278,12 +279,10 @@ export default function Home() {
         <div className={styles.winningsCountContainer}>
           <div className={styles.winningsCountPlayers}>
             <div className={styles.player1winningsCount}>
-              <span>Player 1 score:</span>
-              <p>{player1wins}</p>
+              <span>Player 1 score : {player1wins}</span>
             </div>
             <div className={styles.player2winningsCount}>
-              <span>Player 2 score:</span>
-              <p>{player2wins}</p>
+              <span>Player 2 score : {player2wins}</span>
             </div>
           </div>
         </div>
