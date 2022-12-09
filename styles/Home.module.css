@@ -99,18 +99,14 @@
   width: 450px;
   display: flex;
   justify-content: space-between;
-  color: pink;
+  color:  rgb(251, 23, 61);
 }
 .player1winningsCount,.player2winningsCount{
   width: 50%;
   color: #EF163A;
   
 }
-.player2winningsCount{
-  color: white;
-}
-
-.Oshape{
+.player2winningsCount,.Oshape{
   color: white;
 }
 
