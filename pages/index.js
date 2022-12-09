@@ -233,6 +233,7 @@ export default function Home() {
     block8.current = "";
     block9.current = "";
     winnerLabel.current = "";
+    setPlayedMoves(0)
     setIsPlayed(true);
   };
 
