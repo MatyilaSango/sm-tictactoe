@@ -14,6 +14,7 @@ export default function Home() {
   const [currentHand, setCurrentHand] = useState("");
   const [currentBlock, setCurrentBlock] = useState("");
   const [isPlayed, setIsPlayed] = useState(true);
+  const [playedMoves, setPlayedMoves] = useState(0)
   let block1 = useRef("");
   let block2 = useRef("");
   let block3 = useRef("");
@@ -106,6 +107,8 @@ export default function Home() {
             : player2Winnigs
         );
       setCurrentPlayer(currentPlayer == 1 ? 2 : 1);
+
+      setPlayedMoves(playedMoves + 1);
 
       setIsPlayed(true);
     }
@@ -201,6 +204,11 @@ export default function Home() {
     } else if (winner === "Player 2") {
       player1turn.current = "";
     }
+
+    if(playedMoves === 9){ //maximum number of moves
+      player1turn.current = "Gameover!!!";
+      player2turn.current = "Gameover!!!";
+    } 
 
     setIsPlayed(false);
   }, [isPlayed]);
