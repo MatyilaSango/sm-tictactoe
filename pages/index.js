@@ -207,8 +207,8 @@ export default function Home() {
 
     if(playedMoves === 9 && winner === ""){ //maximum number of moves
 
-      player1turn.current = "Gameover!!!";
-      player2turn.current = "Gameover!!!";
+      player1turn.current = "Game over !!!";
+      player2turn.current = "Game over !!!";
     } 
 
     setIsPlayed(false);
