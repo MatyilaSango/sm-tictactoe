@@ -11,7 +11,7 @@ yarn dev
 ```
 
 ## Preview
-![download](https://user-images.githubusercontent.com/60422984/206535383-fbcfedee-f16a-481d-8100-f4dd94de6101.png)
+![tik](https://github.com/MatyilaSango/sm-tictactoe/assets/60422984/bf73e2fd-23c0-45b2-866c-803f013a0e2c)
 
 ## Deployed on Vercel
 
